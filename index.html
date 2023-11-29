@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let guessNum = Math.random() * 100;
+      guessNum = Number.parseInt(guessNum);
+      let userInput ;
+      let score = 100;
+
+      console.log(guessNum);
+      while (userInput != guessNum) {
+        score = score - 1;
+        userInput = prompt('Enter The Number : ')
+        if (userInput == guessNum) {
+
+          console.log(`Congratulations! You Guess The Correct Number.`);
+          console.log(`You Guess the Actual Number in ${100 - score} Chances.`);
+
+        }
+         else if (userInput > guessNum && userInput < 100) {
+          console.log("Your Guess Number Is Greater Than The Actual Number");
+        }
+         else if (userInput < guessNum && userInput > 0) {
+          console.log("Your Guess Number Is Less Than The Actual Number");
+        }
+         else {
+            console.log('Enter The Number Between 1 to 100');
+        }
+      }
+    </script>
+  </body>
+</html>
